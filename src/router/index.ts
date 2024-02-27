@@ -2,10 +2,11 @@ import { createRouter, createWebHistory } from "vue-router";
 import eCommerce from "../components/eCommerce.vue";
 import Projects from "../components/Projects.vue";
 import Home from "../components/Home.vue";
+import LoginPage from "../components/LoginPage.vue";
 
 const routes = [
   {
-    path: "/",
+    path: "/home",
     name: "Home",
     component: Home,
     meta: {
@@ -27,6 +28,11 @@ const routes = [
     meta: {
       layout: "AppLayout",
     },
+  },
+  {
+    path: "/",
+    name: "Login",
+    component: LoginPage,
   },
 ];
 

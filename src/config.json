@@ -1,0 +1,96 @@
+{
+    "menuItems": [
+        {
+            "section": "",
+            "items": [
+                {
+                    "title": "Dashboard",
+                    "iconUrl": "/src/images/dashboard-icon.svg",
+                    "subTitles": [
+                        {
+                            "name": "Default",
+                            "path": ""
+                        },
+                        {
+                            "name": "eCommerce",
+                            "path": "e-commerce"
+                        },
+                        {
+                            "name": "Projects",
+                            "path": "projects"
+                        },
+                        {
+                            "name": "Marketing",
+                            "path": ""
+                        }
+                    ]
+                },
+                {
+                    "title": "User Profile",
+                    "iconUrl": "/src/images/user-icon.svg",
+                    "subTitles": []
+                },
+                {
+                    "title": "Authentication",
+                    "iconUrl": "/src/images/authentication-icon.svg",
+                    "subTitles": []
+                },
+                {
+                    "title": "Pricing",
+                    "iconUrl": "/src/images/pricing-icon.svg",
+                    "subTitles": []
+                },
+                {
+                    "title": "Task",
+                    "iconUrl": "/src/images/task-icon.svg",
+                    "subTitles": []
+                }
+            ]
+        },
+        {
+            "section": "Tools",
+            "items": [
+                {
+                    "title": "Messages",
+                    "iconUrl": "/src/images/messages-icon.svg",
+                    "subTitles": []
+                },
+                {
+                    "title": "Calendar",
+                    "iconUrl": "/src/images/calendar-icon.svg",
+                    "subTitles": []
+                },
+                {
+                    "title": "Files & Library",
+                    "iconUrl": "/src/images/files-icon.svg",
+                    "subTitles": []
+                },
+                {
+                    "title": "Invoice Manager",
+                    "iconUrl": "/src/images/manager-icon.svg",
+                    "subTitles": []
+                }
+            ]
+        },
+        {
+            "section": "Manage",
+            "items": [
+                {
+                    "title": "Team",
+                    "iconUrl": "/src/images/team-icon.svg",
+                    "subTitles": []
+                },
+                {
+                    "title": "Client",
+                    "iconUrl": "/src/images/client-icon.svg",
+                    "subTitles": []
+                },
+                {
+                    "title": "Integration",
+                    "iconUrl": "/src/images/integration-icon.svg",
+                    "subTitles": []
+                }
+            ]
+        }
+    ]
+}

@@ -2,57 +2,60 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  font-family: "Inter" sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: #1a1a1a;
-  background-color: #fff;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-.card {
-  padding: 2em;
-}
-
 .side-navigation-bar:hover {
   background-color: hsl(0, 0%, 100%);
   border: 1px solid #ededed;
   border-radius: 8px;
   opacity: 1;
-}
+  .navigation-bar-content {
+    width: 312px;
+    overflow: hidden;
+    padding: 0 16px 0 16px;
+  }
+  .icon-part {
+    display: flex;
+  }
+  .logo-part {
+    display: flex;
+    align-items: center;
+    margin: 24px 0 24px 0;
 
-.side-navigation-bar:hover .navigation-bar-content {
-  width: 312px;
-  overflow: hidden;
-  padding: 0 16px 0 16px;
+    .label {
+      font-family: "Inter";
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 24px;
+      letter-spacing: 0px;
+      text-align: left;
+      margin-left: 5px;
+      align-items: center;
+
+      span {
+        display: block;
+      }
+    }
+  }
+  .item-title {
+    display: block;
+  }
+  .nav-item ul li {
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 48px;
+    height: 40px;
+    width: 280px;
+    align-items: center;
+    cursor: pointer;
+
+    a {
+      width: 100%;
+    }
+  }
+
+  .nav-menu-item .title-logo {
+    width: 280px;
+    padding-left: 0;
+  }
 }
 
 .side-navigation-bar {
@@ -61,134 +64,69 @@ button:focus-visible {
   bottom: 0;
   height: 100%;
   left: 0;
+  .navigation-bar-content {
+    width: 72px;
+    overflow: hidden;
+    -webkit-transition: width 0.2s linear;
+    transition: width 0.2s linear;
+    -webkit-transform: translateZ(0) scale(1, 1);
+    box-shadow: 1px 0 15px rgba(0, 0, 0, 0.07);
+    opacity: 1;
+    height: 100%;
+  }
+
+  .logo-part {
+    margin: 24px 16px 24px 16px;
+
+    .notification-icon {
+      margin-right: 12px;
+    }
+
+    .label span {
+      display: none;
+    }
+  }
+
+  .icon-part {
+    display: none;
+  }
+
+  .nav-menu-item {
+    margin-bottom: 24px;
+
+    .title-logo {
+      display: flex;
+      align-items: center;
+      height: 40px;
+      padding-left: 12px;
+      cursor: pointer;
+
+      img {
+        margin-right: 40px;
+        margin-left: 12px;
+      }
+    }
+  }
+  .item-title {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 21px;
+    letter-spacing: 0px;
+    text-align: left;
+    margin-left: 12px;
+    margin-bottom: 8px;
+    display: none;
+  }
 }
 
-.navigation-bar-content {
-  width: 72px;
-  overflow: hidden;
-  -webkit-transition: width 0.2s linear;
-  transition: width 0.2s linear;
-  -webkit-transform: translateZ(0) scale(1, 1);
-  box-shadow: 1px 0 15px rgba(0, 0, 0, 0.07);
-  opacity: 1;
-  height: 100%;
-}
-
-.side-navigation-bar:hover .logo-part {
-  display: flex;
-  align-items: center;
-  margin: 24px 0 24px 0;
-}
-
-.side-navigation-bar .logo-part {
-  margin: 24px 16px 24px 16px;
-}
-
-.side-navigation-bar:hover .icon-part {
-  display: flex;
-}
-
-.side-navigation-bar .icon-part {
-  display: none;
-}
-
-.side-navigation-bar .logo-part .notification-icon {
-  margin-right: 12px;
-}
-
-.side-navigation-bar:hover .logo-part .label {
-  font-family: "Inter";
-  font-size: 16px;
-  font-weight: 600;
-  line-height: 24px;
-  letter-spacing: 0px;
-  text-align: left;
-  margin-left: 5px;
-}
-
-.side-navigation-bar:hover .logo-part .label span {
-  display: block;
-}
-
-.side-navigation-bar .logo-part .label span {
-  display: none;
-}
-
-.side-navigation-bar:hover .logo-part .label {
-  font-family: "Inter";
-  font-size: 16px;
-  font-weight: 600;
-  line-height: 24px;
-  letter-spacing: 0px;
-  text-align: left;
-  margin-left: 5px;
-  align-items: center;
-}
-
-.side-navigation-bar .nav-menu-item {
-  margin-bottom: 24px;
-}
-
-.side-navigation-bar:hover .item-title {
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 21px;
-  letter-spacing: 0px;
-  text-align: left;
-  margin-left: 12px;
-  margin-bottom: 8px;
-  display: block;
-}
-
-.side-navigation-bar .item-title {
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 21px;
-  letter-spacing: 0px;
-  text-align: left;
-  margin-left: 12px;
-  margin-bottom: 8px;
-  display: none;
-}
-
-.side-navigation-bar:hover .nav-item ul li {
-  display: flex;
-  justify-content: flex-start;
-  padding-left: 48px;
-  height: 40px;
-  width: 280px;
-  align-items: center;
-  cursor: pointer;
-}
-
-.side-navigation-bar:hover .nav-item ul li a {
-  width: 100%;
-}
-
-.side-navigation-bar .nav-item ul li:hover {
-  background-color: #f5f5f5;
-  border-radius: 4px;
-}
-
+.side-navigation-bar .nav-item ul li:hover,
 .side-navigation-bar .nav-item ul li.active {
   background-color: #f5f5f5;
   border-radius: 4px;
 }
 
-.side-navigation-bar .nav-menu-item .title-logo {
-  display: flex;
-  align-items: center;
-  height: 40px;
-  padding-left: 12px;
-  cursor: pointer;
-}
-
-.side-navigation-bar:hover .nav-menu-item .title-logo {
-  width: 280px;
-  padding-left: 0;
-}
-
-.side-navigation-bar .nav-menu-item .title-logo.active {
+.side-navigation-bar .nav-menu-item .title-logo.active,
+.side-navigation-bar .nav-menu-item .title-logo:hover {
   background-color: #7239ea;
   border-radius: 5px;
   color: #fff;
@@ -198,20 +136,9 @@ button:focus-visible {
   filter: brightness(0) invert(1);
 }
 
-.side-navigation-bar .nav-menu-item .title-logo:hover {
-  background-color: #7239ea;
-  border-radius: 5px;
-  color: #fff;
-}
-
 .side-navigation-bar:hover .nav-menu-item .title-logo img {
   margin-right: 8px;
   margin-left: 8px;
-}
-
-.side-navigation-bar .nav-menu-item .title-logo img {
-  margin-right: 40px;
-  margin-left: 12px;
 }
 
 .side-navigation-bar .nav-menu-item .title-logo:hover img {
@@ -222,63 +149,62 @@ button:focus-visible {
   display: flex;
   justify-content: center;
   margin-bottom: 24px;
+
+  .search-bar {
+    border: 1px solid #ededed;
+    width: 40px;
+    height: 40px;
+    border-radius: 6px;
+    align-items: center;
+    color: #878787;
+    font-family: "Inter", sans-serif;
+
+    .search-input {
+      width: 280px;
+      height: 38px;
+      align-items: center;
+      color: #878787;
+      font-family: "Inter", sans-serif;
+      background-color: #fff;
+      background-color: transparent;
+      border: 0px solid;
+    }
+
+    .search-input:focus {
+      outline: none;
+    }
+
+    input {
+      display: none;
+    }
+
+    .search-icon {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+  }
 }
 
 .side-navigation-bar:hover .search-bar-part .search-bar {
   width: 280px;
-}
 
-.side-navigation-bar .search-bar-part .search-bar {
-  border: 1px solid #ededed;
-  width: 40px;
-  height: 40px;
-  border-radius: 6px;
-  align-items: center;
-  color: #878787;
-  font-family: "Inter", sans-serif;
-}
+  input {
+    display: block;
+  }
 
-.side-navigation-bar:hover .search-bar-part .search-bar input {
-  display: block;
-}
-
-.side-navigation-bar .search-bar-part .search-bar input {
-  display: none;
-}
-
-.side-navigation-bar .search-bar-part .search-bar .search-input {
-  /* border: none; */
-  width: 280px;
-  height: 38px;
-  align-items: center;
-  color: #878787;
-  font-family: "Inter", sans-serif;
-  background-color: #fff;
-  background-color: transparent;
-  border: 0px solid;
-}
-
-.side-navigation-bar .search-bar-part .search-bar .search-input:focus {
-  outline: none;
-}
-
-.side-navigation-bar .search-bar-part .search-bar .search-icon {
-  margin-left: 10px;
-  margin-right: 10px;
-}
-
-.side-navigation-bar:hover .search-bar-part .search-bar .search-icon {
-  margin-left: 13px;
-  margin-right: 13px;
+  .search-icon {
+    margin-left: 13px;
+    margin-right: 13px;
+  }
 }
 
 .side-navigation-bar:hover .avatar {
   padding-bottom: 20px;
-}
 
-.side-navigation-bar:hover .avatar .avatar-pic {
-  margin-right: 8px;
-  margin-left: 10px;
+  .avatar-pic {
+    margin-right: 8px;
+    margin-left: 10px;
+  }
 }
 
 .side-navigation-bar .avatar .avatar-pic {
@@ -326,60 +252,66 @@ button:focus-visible {
 
 .page-content {
   padding: 24px 24px 24px 24px;
+
+  .logo-text {
+    align-items: center;
+
+    .started {
+      font-family: "Inter";
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 54px;
+      letter-spacing: 0em;
+      text-align: left;
+      margin-left: 20px;
+    }
+  }
+  .title {
+    font-size: 42px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    text-align: left;
+    margin-bottom: 50px;
+    margin-top: 50px;
+  }
+
+  .subtitle {
+    font-family: "Inter";
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 51px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #878787;
+  }
+
+  .page-text {
+    .text-title {
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 76px;
+      letter-spacing: 0em;
+      text-align: left;
+    }
+    .text {
+      font-family: "Inter";
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 22px;
+      letter-spacing: 0em;
+      text-align: left;
+
+      span {
+        color: midnightblue;
+        text-decoration: underline;
+        font-weight: 500;
+      }
+    }
+  }
 }
 
-.page-content .logo-text {
-  align-items: center;
-}
-
-.page-content .logo-text .started {
-  font-family: "Inter";
-  font-size: 12px;
-  font-weight: 600;
-  line-height: 54px;
-  letter-spacing: 0em;
-  text-align: left;
-  margin-left: 20px;
-}
-
-.page-content .title {
-  font-size: 42px;
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  text-align: left;
-  margin-bottom: 50px;
-  margin-top: 50px;
-}
-
-.page-content .subtitle {
-  font-family: "Inter";
-  font-size: 24px;
-  font-weight: 400;
-  line-height: 51px;
-  letter-spacing: 0em;
-  text-align: left;
-  color: #878787;
-}
-
-.page-content .page-text .text-title {
-  font-size: 18px;
-  font-weight: 600;
-  line-height: 76px;
-  letter-spacing: 0em;
-  text-align: left;
-}
-
-.page-content .page-text .text {
-  font-family: "Inter";
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 22px;
-  letter-spacing: 0em;
-  text-align: left;
-}
-
-.page-content .page-text .text span {
-  color: midnightblue;
-  text-decoration: underline;
-  font-weight: 500;
+.login-page {
+  width: 100%;
+  background: url("./images/login-background.png") no-repeat fixed center;
+  background-size: cover;
 }
