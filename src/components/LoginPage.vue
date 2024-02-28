@@ -11,7 +11,7 @@ import { defineComponent } from 'vue';
 import LoginComp from "./LoginComp.vue"
 
 export default defineComponent({
-    name: 'login',
+    name: 'Login',
 
     components: {
         LoginComp

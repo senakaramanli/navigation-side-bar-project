@@ -7,8 +7,6 @@ import { makeServer } from "./server";
 
 var app = createApp(App);
 
-app.config.globalProperties.menuList = ["asd", "efg"];
-
 app.use(router).mount("#app");
 
 makeServer();

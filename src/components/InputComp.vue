@@ -4,7 +4,8 @@
             <div class="icon">
                 <img :src="iconUrl">
             </div>
-            <input class="text" :placeholder="inputText" :v-model="inputEntry" />
+            <input class="text" :placeholder="inputText" :value="modelValue"
+                @input="$emit('update:modelValue', ($event.target as HTMLInputElement).value)" />
         </div>
     </div>
 </template>
@@ -13,13 +14,17 @@
 import { defineComponent } from 'vue';
 
 export default defineComponent({
-    name: 'login',
+    name: 'InputComponent',
     props: {
         iconUrl: String,
         inputText: String,
-        inputEntry: String
+        modelValue: {
+            type: String,
+            required: true
+        }
+    },
+    setup() {
     }
-
 });
 </script>
 

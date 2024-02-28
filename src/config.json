@@ -5,6 +5,8 @@
             "items": [
                 {
                     "title": "Dashboard",
+                    "id": 1,
+                    "isActive": false,
                     "iconUrl": "/src/images/dashboard-icon.svg",
                     "subTitles": [
                         {
@@ -27,21 +29,29 @@
                 },
                 {
                     "title": "User Profile",
+                    "isActive": false,
+                    "id": 2,
                     "iconUrl": "/src/images/user-icon.svg",
                     "subTitles": []
                 },
                 {
                     "title": "Authentication",
+                    "isActive": false,
+                    "id": 3,
                     "iconUrl": "/src/images/authentication-icon.svg",
                     "subTitles": []
                 },
                 {
                     "title": "Pricing",
+                    "isActive": false,
+                    "id": 4,
                     "iconUrl": "/src/images/pricing-icon.svg",
                     "subTitles": []
                 },
                 {
                     "title": "Task",
+                    "isActive": false,
+                    "id": 5,
                     "iconUrl": "/src/images/task-icon.svg",
                     "subTitles": []
                 }
@@ -52,21 +62,29 @@
             "items": [
                 {
                     "title": "Messages",
+                    "isActive": false,
+                    "id": 6,
                     "iconUrl": "/src/images/messages-icon.svg",
                     "subTitles": []
                 },
                 {
                     "title": "Calendar",
+                    "isActive": false,
+                    "id": 7,
                     "iconUrl": "/src/images/calendar-icon.svg",
                     "subTitles": []
                 },
                 {
                     "title": "Files & Library",
+                    "isActive": false,
+                    "id": 8,
                     "iconUrl": "/src/images/files-icon.svg",
                     "subTitles": []
                 },
                 {
                     "title": "Invoice Manager",
+                    "isActive": false,
+                    "id": 9,
                     "iconUrl": "/src/images/manager-icon.svg",
                     "subTitles": []
                 }
@@ -77,16 +95,22 @@
             "items": [
                 {
                     "title": "Team",
+                    "isActive": false,
+                    "id": 10,
                     "iconUrl": "/src/images/team-icon.svg",
                     "subTitles": []
                 },
                 {
                     "title": "Client",
+                    "isActive": false,
+                    "id": 11,
                     "iconUrl": "/src/images/client-icon.svg",
                     "subTitles": []
                 },
                 {
                     "title": "Integration",
+                    "isActive": false,
+                    "id": 12,
                     "iconUrl": "/src/images/integration-icon.svg",
                     "subTitles": []
                 }

@@ -1,7 +1,8 @@
 <template>
     <div v-for="x in items" class="nav-item">
-        <div :class="{ 'title-logo active flex justify-between': isOpen, 'title-logo flex justify-between': !isOpen }"
-            @click='updateStatus(!isOpen, $event)'>
+        <div :key="x.id"
+            :class="{ 'title-logo active flex justify-between': selectedItem === x.id, 'title-logo flex justify-between': selectedItem !== (x.id) }"
+            @click="selectMenuItem(x.id)">
             <div class="left-side flex items-center">
                 <img :src="x.iconUrl" style="width:24px; height:24px">
                 <div class="label">{{ x.title }}</div>
@@ -10,8 +11,8 @@
                 <img src="../images/arrow-icon.svg">
             </div>
         </div>
-        <ul v-for="j in x.subTitles" v-if="isOpen">
-            <li :class="{ 'active': $route.name === 'eCommerce' }">
+        <ul v-for="j in x.subTitles" v-if="x.id === selectedItem">
+            <li :class="{ 'active': $route.name === j.name }">
                 <router-link :to="j.path">{{ j.name }}</router-link>
             </li>
         </ul>
@@ -19,24 +20,38 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from 'vue';
+import { defineComponent, ref, watch } from 'vue';
 
 export default defineComponent({
-    name: "AppLayout",
+    name: "NavItem",
     components: {
     },
     props: {
-        items: Object
+        items: Object,
+        isSidebarOpen: Boolean
     },
-    setup() {
-        const isOpen = ref(false);
+    setup(props) {
 
-        function updateStatus(status: boolean, event: any = null) {
-            console.log(event.target)
-            event.target.classList.toggle('asdasdasd');
-            isOpen.value = status
-        }
-        return { isOpen, updateStatus };
+        const selectedItem = ref(null)
+
+        const selectMenuItem = (itemId: null) => {
+
+            if (selectedItem.value === '') {
+                selectedItem.value = itemId
+            } else if (selectedItem.value === itemId) {
+                selectedItem.value = null
+            } else if (selectedItem.value !== '' && selectedItem.value !== itemId) {
+                selectedItem.value = itemId
+            }
+        };
+
+
+        watch(() => props.isSidebarOpen, (firstVal, lastVal) => {
+            selectedItem.value = null
+        })
+
+
+        return { selectMenuItem, selectedItem };
     }
 
 

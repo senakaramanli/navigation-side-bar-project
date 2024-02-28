@@ -1,5 +1,5 @@
 // src/server.ts
-import { createServer, Model } from 'miragejs'
+import { createServer, Model, Response } from "miragejs";
 
 export function makeServer({ environment = "development" } = {}) {
   let server = createServer({
@@ -11,12 +11,21 @@ export function makeServer({ environment = "development" } = {}) {
 
     routes() {
       this.post("/api/login", (schema, request) => {
-        const attrs = JSON.parse(request.requestBody);
-        console.log('aşlskdjfhbg', attrs)
-        if (attrs.username === "user" && attrs.password === "password") {
-          return { token: "fake-token", username: attrs.username };
+        const req = JSON.parse(request.requestBody);
+        const username = "flowforge";
+        const password = "12345";
+        if (req.username === username && req.password === password) {
+          return new Response(
+            200,
+            {},
+            { token: "fake-token", username: req.username }
+          );
         } else {
-          return new Response(401, {}, { error: "Wrong credentials" });
+          return new Response(
+            401,
+            {},
+            { error: "Username or password incorrect" }
+          );
         }
       });
     },

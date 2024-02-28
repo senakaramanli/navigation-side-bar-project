@@ -10,7 +10,7 @@ import { defineComponent, ref } from 'vue';
 import { RouterView } from 'vue-router';
 
 export default defineComponent({
-    name: 'Page1',
+    name: 'Breadcrumb',
     props: {
         pageName: String
     },

@@ -5,8 +5,8 @@
                 <img src="../images/avatar.png">
             </div>
             <div class="person-name-part flex flex-col">
-                <div class="name">Robbi Darwis</div>
-                <div class="email-address">flowforgestd@gmail.com</div>
+                <div class="name">{{ name }}</div>
+                <div class="email-address">{{ emailAddress }}</div>
             </div>
         </div>
         <div class="share-icon">
@@ -16,10 +16,14 @@
     </div>
 </template>
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent, ref } from 'vue';
 
 export default defineComponent({
-    name: "UserProfile"
-
+    name: "UserProfile",
+    setup() {
+        const name = ref('Robbi Darwis')
+        const emailAddress = ref('flowforgestd@gmail.com')
+        return { name, emailAddress }
+    }
 });
 </script>

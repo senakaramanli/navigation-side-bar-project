@@ -1,5 +1,5 @@
 <template>
-  <div class="side-navigation-bar grow" @mouseleave="updateStatus(false)">
+  <div class="side-navigation-bar grow" @mouseenter="isSidebarOpen = true" @mouseleave="isSidebarOpen = false">
     <div class="navigation-bar-content">
       <div class="logo-part flex justify-between items-center">
         <div class="logo-label flex justify-between">
@@ -27,7 +27,7 @@
           <input class="search-input" placeholder="Search">
         </div>
       </div>
-      <SideBarItem />
+      <SideBarItem :isSidebarOpen="isSidebarOpen" />
       <UserProfile />
     </div>
   </div>
@@ -47,14 +47,11 @@ export default defineComponent({
     UserProfile
   },
   setup() {
-    const isOpen = ref(false);
+    const isSidebarOpen = ref(false);
     const sideBarTitle = ref('Flow Forge');
 
-    function updateStatus(status: boolean) {
-      isOpen.value = status
-    }
 
-    return { isOpen, updateStatus, sideBarTitle };
+    return { sideBarTitle, isSidebarOpen };
   }
 
 });
