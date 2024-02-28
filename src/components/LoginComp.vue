@@ -3,8 +3,10 @@
         <div class="login-container">
             <div class="login-title">{{ loginTitle }}</div>
             <div class="flex items-center justify-center flex-col">
-                <InputComp :input-text="userNamePlaceholder" v-model="userName" :iconUrl="iconUrlUser" />
-                <InputComp :input-text="passwordPlaceholder" v-model="password" :iconUrl="iconUrlPassword" />
+                <InputComp :input-text="userNamePlaceholder" v-model="userName" :iconUrl="getImageUrl(iconNameUser)"
+                    :inputType="'text'" />
+                <InputComp :input-text="passwordPlaceholder" v-model="password" :iconUrl="getImageUrl(iconNamePassword)"
+                    :inputType="'password'" />
             </div>
             <div class="warning-text flex justify-center" v-if="isWarning">
                 <p>{{ warningText }}</p>
@@ -33,8 +35,8 @@ export default defineComponent({
     setup() {
         const userNamePlaceholder = ref('Username')
         const passwordPlaceholder = ref('Password')
-        const iconUrlUser = ref('/src/images/username-icon.svg')
-        const iconUrlPassword = ref('/src/images/password-icon.svg')
+        const iconNameUser = ref('username-icon.svg')
+        const iconNamePassword = ref('password-icon.svg')
         const loginTitle = ref('Login To Forge Studio')
         const warningText = ref('Username or password incorrect')
         const buttontext = ref('Login')
@@ -70,8 +72,12 @@ export default defineComponent({
                 )
         };
 
+        const getImageUrl = (name: string) => {
+            return new URL(`../images/${name}`, import.meta.url).href
+        }
+
         return {
-            userNamePlaceholder, passwordPlaceholder, iconUrlUser, iconUrlPassword, loginTitle, warningText, buttontext, userName, password, login, isWarning
+            userNamePlaceholder, passwordPlaceholder, iconNameUser, iconNamePassword, loginTitle, warningText, buttontext, userName, password, login, isWarning, getImageUrl
         }
     }
 

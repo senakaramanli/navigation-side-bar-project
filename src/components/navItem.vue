@@ -4,7 +4,7 @@
             :class="{ 'title-logo active flex justify-between': selectedItem === x.id, 'title-logo flex justify-between': selectedItem !== (x.id) }"
             @click="selectMenuItem(x.id)">
             <div class="left-side flex items-center">
-                <img :src="x.iconUrl" style="width:24px; height:24px">
+                <img :src="getImageUrl(x.iconUrl)" style="width:24px; height:24px">
                 <div class="label">{{ x.title }}</div>
             </div>
             <div class="right-side">
@@ -50,8 +50,12 @@ export default defineComponent({
             selectedItem.value = null
         })
 
+        const getImageUrl = (name: string) => {
+            return new URL(`../images/${name}`, import.meta.url).href
+        }
 
-        return { selectMenuItem, selectedItem };
+
+        return { selectMenuItem, selectedItem, getImageUrl };
     }
 
 

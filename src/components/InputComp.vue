@@ -4,7 +4,7 @@
             <div class="icon">
                 <img :src="iconUrl">
             </div>
-            <input class="text" :placeholder="inputText" :value="modelValue"
+            <input :type=inputType class="text" :placeholder="inputText" :value="modelValue"
                 @input="$emit('update:modelValue', ($event.target as HTMLInputElement).value)" />
         </div>
     </div>
@@ -18,6 +18,7 @@ export default defineComponent({
     props: {
         iconUrl: String,
         inputText: String,
+        inputType: String,
         modelValue: {
             type: String,
             required: true
