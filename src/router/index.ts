@@ -57,6 +57,7 @@ const router = createRouter({
 });
 
 router.beforeEach((to) => {
+  debugger;
   if (!isAuthenticated() && to.name !== "Login") {
     return { name: "Login" };
   } else if (isAuthenticated() && to.name === "Login") {
